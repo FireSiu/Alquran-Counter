@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, CheckCircle2, RotateCcw } from 'lucide-react';
+import { BookOpen, CheckCircle2, RotateCcw, Bookmark } from 'lucide-react';
 import { ReadingProgress } from '../types/quran';
 
 interface NavbarProps {
@@ -16,79 +16,48 @@ export const Navbar: React.FC<NavbarProps> = ({
   onJumpToLastRead,
 }) => {
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF9F5]/90 backdrop-blur-md border-b border-stone-200/80 transition-all">
+    <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Bar Contract: 3 zones separated by gap-8 */}
-        <div className="flex items-center justify-between gap-8 h-16">
-          {/* Zone 1: Single text element wordmark */}
-          <button
-            onClick={onGoHome}
-            className="flex items-center gap-2.5 text-left group cursor-pointer"
-          >
-            <div className="w-9 h-9 rounded-lg bg-stone-900 text-stone-100 flex items-center justify-center font-serif text-lg font-bold shadow-xs group-hover:bg-purple-950 transition-colors">
-              <BookOpen className="w-5 h-5 text-pink-200" />
+        <div className="flex items-center justify-between gap-6 h-16">
+          <button onClick={onGoHome} className="flex items-center gap-3 text-left group cursor-pointer">
+            <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-sm group-hover:bg-emerald-700 group-hover:rotate-[-6deg] transition-all">
+              <BookOpen className="w-5 h-5" />
             </div>
             <div className="leading-tight">
-              <span className="text-lg font-bold tracking-tight text-stone-900 whitespace-nowrap group-hover:text-purple-950 transition-colors">
-                Alquran Counter
-              </span>
-              <span className="block text-[11px] text-stone-500 font-normal">
-                Baca · Tadabbur · Hitung
-              </span>
+              <span className="block text-lg font-bold tracking-tight text-slate-900">Alquran Counter</span>
+              <span className="block text-xs text-slate-500 font-semibold">Hisabul Jumal · 114 Surat</span>
             </div>
           </button>
 
-          {/* Zone 2: Single-line text navigation links */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-stone-600">
-            <button
-              onClick={onGoHome}
-              className="hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer"
-            >
-              114 Surat
+          <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+            <button onClick={onGoHome} className="hover:text-emerald-700 transition-colors cursor-pointer">
+              Daftar Surat
             </button>
-
             {progress.lastRead && (
               <button
                 onClick={onJumpToLastRead}
-                className="hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer flex items-center gap-1.5 text-stone-700 font-semibold"
+                className="flex items-center gap-1.5 hover:text-emerald-700 transition-colors cursor-pointer"
                 title="Lanjutkan bacaan terakhir"
               >
-                <span>Terakhir: {progress.lastRead.surahName} : {progress.lastRead.ayahNumber}</span>
+                <Bookmark className="w-4 h-4 text-amber-500" />
+                <span>
+                  {progress.lastRead.surahName} : {progress.lastRead.ayahNumber}
+                </span>
               </button>
             )}
-
-            <button
-              onClick={onOpenTasbih}
-              className="hover:text-stone-900 transition-colors whitespace-nowrap cursor-pointer"
-            >
-              Tasbih Digital
-            </button>
-
-            <div className="flex items-center gap-1.5 text-xs text-stone-500 tabular-nums">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              <span>{progress.totalAyatRead} Ayat Dibaca</span>
-            </div>
+            <span className="flex items-center gap-1.5 text-slate-500 tabular-nums">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              {progress.totalAyatRead} ayat dibaca
+            </span>
           </nav>
 
-          {/* Zone 3: 1 primary action */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            {progress.lastRead && (
-              <button
-                onClick={onJumpToLastRead}
-                className="md:hidden px-2.5 py-1.5 text-xs font-medium text-stone-700 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors whitespace-nowrap"
-              >
-                Ayat {progress.lastRead.ayahNumber}
-              </button>
-            )}
-
-            <button
-              onClick={onOpenTasbih}
-              className="px-4 py-2 text-xs font-medium text-white bg-stone-900 rounded-lg hover:bg-stone-800 transition-colors whitespace-nowrap cursor-pointer shadow-xs flex items-center gap-1.5"
-            >
-              <RotateCcw className="w-3.5 h-3.5 text-pink-300" />
-              <span>Tasbih Counter</span>
-            </button>
-          </div>
+          <button
+            onClick={onOpenTasbih}
+            className="px-4 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-xl hover:bg-emerald-700 transition-colors cursor-pointer shadow-sm flex items-center gap-2"
+          >
+            <RotateCcw className="w-4 h-4" />
+            <span>Tasbih</span>
+          </button>
         </div>
       </div>
     </header>

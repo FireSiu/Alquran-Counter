@@ -40,6 +40,14 @@ export interface SurahDetail {
   verses: Verse[];
 }
 
+export type FilterKey =
+  | 'sameAyahCount'
+  | 'sameTotal'
+  | 'internalDup'
+  | 'Makkiyah'
+  | 'Madaniyah'
+  | 'juz30';
+
 export interface ReadingProgress {
   totalAyatRead: number;
   readVerses: Record<string, boolean>; // key: `${surahNumber}:${ayahNumber}`

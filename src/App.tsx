@@ -10,23 +10,33 @@ import { SurahList } from './components/SurahList';
 import { SurahDetailView } from './components/SurahDetailView';
 import { TasbihModal } from './components/TasbihModal';
 import { Footer } from './components/Footer';
+import { FilterSidebar } from './components/FilterSidebar';
+import { SimilarityMap } from './components/SimilarityMap';
 import { getAllSurahs, searchSurahs } from './utils/quranApi';
+import { internalDuplicates, surahsWithSameAyahCount, surahsWithSameTotal } from './utils/abjadStats';
 import { useQuranStorage } from './hooks/useQuranStorage';
+import { FilterKey, SurahMeta } from './types/quran';
+
+const FILTER_FNS: Record<FilterKey, (s: SurahMeta) => boolean> = {
+  sameAyahCount: (s) => surahsWithSameAyahCount(s.number_of_surah).length > 0,
+  sameTotal: (s) => surahsWithSameTotal(s.number_of_surah).length > 0,
+  internalDup: (s) => internalDuplicates(s.number_of_surah).length > 0,
+  Makkiyah: (s) => s.type === 'Makkiyah',
+  Madaniyah: (s) => s.type === 'Madaniyah',
+  juz30: (s) => s.number_of_surah >= 78,
+};
 
 export default function App() {
   const allSurahs = useMemo(() => getAllSurahs(), []);
 
-  // Application view state: null = landing page, number = viewing specific surah
+  // null = landing page, number = viewing specific surah
   const [selectedSurahNumber, setSelectedSurahNumber] = useState<number | null>(null);
+  const [initialAyah, setInitialAyah] = useState<number | null>(null);
 
-  // Search & filter state
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState<'all' | 'Makkiyah' | 'Madaniyah' | 'juz30'>('all');
-
-  // Tasbih Modal state
+  const [activeFilters, setActiveFilters] = useState<Set<FilterKey>>(new Set());
   const [isTasbihOpen, setIsTasbihOpen] = useState(false);
 
-  // Persistent reading progress & tasbih storage
   const {
     progress,
     toggleAyatRead,
@@ -38,34 +48,46 @@ export default function App() {
     setCustomTarget,
   } = useQuranStorage();
 
-  // Filtered surahs for the landing page grid
-  const filteredSurahs = useMemo(() => {
-    return searchSurahs(allSurahs, searchQuery, activeFilter);
-  }, [allSurahs, searchQuery, activeFilter]);
+  const filterCounts = useMemo(() => {
+    const out = {} as Record<FilterKey, number>;
+    (Object.keys(FILTER_FNS) as FilterKey[]).forEach((k) => (out[k] = allSurahs.filter(FILTER_FNS[k]).length));
+    return out;
+  }, [allSurahs]);
 
-  // Navigate to specific surah
-  const handleOpenSurah = (surahNumber: number) => {
+  // Semua filter yang dicentang harus terpenuhi (AND), urutan tetap 1..114
+  const filteredSurahs = useMemo(() => {
+    let list = searchSurahs(allSurahs, searchQuery);
+    activeFilters.forEach((k) => (list = list.filter(FILTER_FNS[k])));
+    return list;
+  }, [allSurahs, searchQuery, activeFilters]);
+
+  const toggleFilter = (k: FilterKey) =>
+    setActiveFilters((prev) => {
+      const next = new Set(prev);
+      if (next.has(k)) next.delete(k);
+      else next.add(k);
+      return next;
+    });
+
+  const handleOpenSurah = (surahNumber: number, focusAyah?: number) => {
+    if (surahNumber < 1 || surahNumber > 114) return;
     setSelectedSurahNumber(surahNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setInitialAyah(focusAyah ?? null);
+    if (!focusAyah) window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Return to landing page
   const handleGoHome = () => {
     setSelectedSurahNumber(null);
+    setInitialAyah(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Jump to last read surah & verse
   const handleJumpToLastRead = () => {
-    if (progress.lastRead) {
-      setSelectedSurahNumber(progress.lastRead.surahNumber);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    if (progress.lastRead) handleOpenSurah(progress.lastRead.surahNumber, progress.lastRead.ayahNumber);
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 selection:bg-pink-100 selection:text-purple-900">
-      {/* Navigation Top Bar */}
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       <Navbar
         progress={progress}
         onOpenTasbih={() => setIsTasbihOpen(true)}
@@ -75,33 +97,47 @@ export default function App() {
 
       <main className="flex-1">
         {selectedSurahNumber === null ? (
-          /* Landing Page View */
           <>
             <LandingHero
+              allSurahs={allSurahs}
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
-              activeFilter={activeFilter}
-              onFilterChange={setActiveFilter}
-              filteredCount={filteredSurahs.length}
               progress={progress}
-              onJumpToLastRead={handleJumpToLastRead}
-              onQuickJumpSurah={handleOpenSurah}
+              onOpenSurah={handleOpenSurah}
             />
 
-            <SurahList
-              surahs={filteredSurahs}
-              progress={progress}
-              onSelectSurah={handleOpenSurah}
-              onResetSearch={() => {
-                setSearchQuery('');
-                setActiveFilter('all');
-              }}
-            />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+              <FilterSidebar
+                active={activeFilters}
+                counts={filterCounts}
+                onToggle={toggleFilter}
+                onReset={() => setActiveFilters(new Set())}
+                resultCount={filteredSurahs.length}
+              />
+
+              <div className="space-y-6 min-w-0">
+                <div className="flex items-end justify-between">
+                  <h2 className="text-xl font-extrabold text-slate-900">Daftar Surat</h2>
+                  <span className="text-sm font-semibold text-slate-500">Al-Fatihah (1) — An-Nas (114)</span>
+                </div>
+                <SurahList
+                  surahs={filteredSurahs}
+                  progress={progress}
+                  onSelectSurah={(n) => handleOpenSurah(n)}
+                  onResetSearch={() => {
+                    setSearchQuery('');
+                    setActiveFilters(new Set());
+                  }}
+                />
+                <SimilarityMap allSurahs={allSurahs} onOpenSurah={handleOpenSurah} />
+              </div>
+            </div>
           </>
         ) : (
-          /* Individual Surah Ayat Page View */
           <SurahDetailView
             surahNumber={selectedSurahNumber}
+            initialAyah={initialAyah}
+            allSurahs={allSurahs}
             progress={progress}
             onBack={handleGoHome}
             onNavigateSurah={handleOpenSurah}
@@ -111,7 +147,6 @@ export default function App() {
         )}
       </main>
 
-      {/* Digital Tasbih & Counter Modal */}
       {isTasbihOpen && (
         <TasbihModal
           tasbih={tasbih}
@@ -123,11 +158,7 @@ export default function App() {
         />
       )}
 
-      {/* Editorial Footer */}
-      <Footer
-        onQuickJumpSurah={handleOpenSurah}
-        onOpenTasbih={() => setIsTasbihOpen(true)}
-      />
+      <Footer />
     </div>
   );
 }

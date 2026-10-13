@@ -111,26 +111,11 @@ export async function getSurahDetail(surahNumber: number): Promise<SurahDetail> 
 /**
  * Filter surahs based on keyword (name, meaning, number, type)
  */
-export function searchSurahs(
-  surahs: SurahMeta[],
-  query: string,
-  filterType: 'all' | 'Makkiyah' | 'Madaniyah' | 'juz30'
-): SurahMeta[] {
-  let list = surahs;
-
-  if (filterType === 'Makkiyah') {
-    list = list.filter((s) => s.type === 'Makkiyah');
-  } else if (filterType === 'Madaniyah') {
-    list = list.filter((s) => s.type === 'Madaniyah');
-  } else if (filterType === 'juz30') {
-    // Juz 30 consists of Surah 78 (An-Naba) to 114 (An-Nas)
-    list = list.filter((s) => s.number_of_surah >= 78 && s.number_of_surah <= 114);
-  }
-
+export function searchSurahs(surahs: SurahMeta[], query: string): SurahMeta[] {
   const q = query.trim().toLowerCase();
-  if (!q) return list;
+  if (!q) return surahs;
 
-  return list.filter((s) => {
+  return surahs.filter((s) => {
     const num = s.number_of_surah.toString();
     const nameLatin = s.name.toLowerCase();
     const cleanLatin = nameLatin.replace(/[^a-z0-9]/g, '');
