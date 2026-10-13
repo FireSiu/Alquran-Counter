@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arabic: 'Scheherazade New', 'Amiri', 'Traditional Arabic', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.font-amiri {
+  font-family: 'Amiri', serif;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f6f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d3c7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b5b09f;
+}
