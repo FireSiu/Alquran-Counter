@@ -23,37 +23,163 @@
     "number": 1,
     "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
     "translation_en": "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
-    "translation_id": "Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang."
+    "translation_id": "Dengan nama Allah, Dzat Pemilik curahan rahmat yang Maha Luas bagi seluruh alam, lagi Maha Melimpahkan kasih sayang abadi bagi orang-orang beriman.",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "curahan rahmat yang Maha Luas",
+      "kasih sayang abadi"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "curahan rahmat yang Maha Luas",
+        "root": "ر-ح-م",
+        "arabic_text": "الرَّحْمَنُ: عامُّ الرَّحْمَةِ لِجَمِيعِ الخَلْقِ فِي الدُّنْيا... صِيغَةُ فَعْلان تَدُلُّ عَلَى الامْتِلاءِ والسَّعَةِ",
+        "explanation": "Ar-Rahman adalah sifat kelimpahan rahmat Allah yang maha luas mencakup seluruh makhluk di alam semesta."
+      },
+      {
+        "keyword": "kasih sayang abadi",
+        "root": "ر-ح-م",
+        "arabic_text": "الرَّحِيمُ: خاصُّ الرَّحْمَةِ بالمُؤْمِنِينَ فِي الآخِرَةِ... صِيغَةُ فَعِيل تَدُلُّ عَلَى الدَّوامِ والثُّبُوتِ",
+        "explanation": "Ar-Rahim menunjukkan sifat kesinambungan kasih sayang khusus yang kekal abadi bagi hamba-hamba-Nya yang beriman."
+      }
+    ]
   }, {
     "number": 2,
     "text": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
     "translation_en": "[All] praise is [due] to Allah, Lord of the worlds -",
-    "translation_id": "Segala puji bagi Allah, Tuhan semesta alam."
+    "translation_id": "Segala sanjungan kesempurnaan dan kepatuhan murni hanya milik Allah, Pemelihara, Pencipta, dan Pendidik semesta alam (seluruh ragam ciptaan).",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "sanjungan kesempurnaan",
+      "Pendidik semesta alam"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "sanjungan kesempurnaan",
+        "root": "ح-م-د",
+        "arabic_text": "الحَمْدُ: الثَّناءُ بالجَمِيلِ عَلَى جِهَةِ التَّعْظِيمِ والتَّبْجِيلِ... وهُوَ أَعمُّ مِنَ الشُّكْرِ لأَنَّهُ عَلَى الصِّفاتِ الذَّاتِيَّةِ والإِنْعامِ",
+        "explanation": "Al-Hamdu adalah sanjungan tertinggi yang mencakup kepujian atas kesempurnaan zat, sifat keagungan, dan kebaikan pemberian-Nya."
+      },
+      {
+        "keyword": "Pendidik semesta alam",
+        "root": "ع-ل-م",
+        "arabic_text": "العالَمُ: الخَلْقُ كُلُّهُ... وهُوَ مُشْتَقٌّ مِنَ العَلامَةِ لأَنَّهُ عَلَمٌ دالٌّ عَلَى صانِعِهِ وخالِقِهِ",
+        "explanation": "Al-'Alamin adalah seluruh jenis dan tatanan makhluk yang menjadi bukti nyata (alamat) atas kekuasaan Sang Maha Pencipta."
+      }
+    ]
   }, {
     "number": 3,
     "text": "ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
     "translation_en": "The Entirely Merciful, the Especially Merciful,",
-    "translation_id": "Maha Pemurah lagi Maha Penyayang."
+    "translation_id": "Maha Meliputi segala sesuatu dengan rahmat-Nya, lagi Maha Kekal pemeliharaan kasih sayang-Nya,",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "Maha Meliputi segala sesuatu dengan rahmat-Nya",
+      "Maha Kekal pemeliharaan kasih sayang-Nya"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "Maha Meliputi segala sesuatu dengan rahmat-Nya",
+        "root": "ر-ح-م",
+        "arabic_text": "الرَّحْمَنُ: الَّذِي وَسِعَتْ رَحْمَتُهُ كُلَّ شَيْءٍ",
+        "explanation": "Pengulangan sifat rahmat untuk menegaskan bahwa fondasi pengasuhan alam semesta dibangun di atas kasih sayang dan karunia, bukan kezaliman."
+      },
+      {
+        "keyword": "Maha Kekal pemeliharaan kasih sayang-Nya",
+        "root": "ر-ح-م",
+        "arabic_text": "الرَّحِيمُ: الدَّائِمُ الإِحْسانِ الرَّفِيقُ بالعِبادِ",
+        "explanation": "Kelembutan asuhan Ilahi yang senantiasa menaungi perjalanan hamba yang taat menuju ridha-Nya."
+      }
+    ]
   }, {
     "number": 4,
     "text": "مَٰلِكِ يَوْمِ ٱلدِّينِ",
     "translation_en": "Sovereign of the Day of Recompense.",
-    "translation_id": "Yang menguasai di Hari Pembalasan."
+    "translation_id": "Penguasa Tunggal pada Hari Perhitungan, Pembalasan amal, dan Keputusan hukum yang mutlak.",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "Hari Perhitungan, Pembalasan amal, dan Keputusan hukum"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "Hari Perhitungan, Pembalasan amal, dan Keputusan hukum",
+        "root": "د-ي-ن",
+        "arabic_text": "الدِّينُ: الجَزاءُ والحِسابُ والقَضاءُ... يَوْمِ الدِّينِ: يَوْمِ الجَزاءِ، دِنْتُهُ بِفِعْلِهِ جَزَيْتُهُ وقَضَيْتُ عَلَيْهِ",
+        "explanation": "Yaum ad-Din adalah hari ketika setiap perbuatan ditimbang secara adil, dibalas secara hakiki, dan tiada kekuasaan lain yang berlaku selain hukum-Nya."
+      }
+    ]
   }, {
     "number": 5,
     "text": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
     "translation_en": "It is You we worship and You we ask for help.",
-    "translation_id": "Hanya Engkaulah yang kami sembah, dan hanya kepada Engkaulah kami meminta pertolongan."
+    "translation_id": "Hanya kepada Engkau kami menundukkan diri beribadah penuh ketundukan dan ketaatan, dan hanya kepada Engkau kami memohon pertolongan dan penguatan.",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "menundukkan diri beribadah penuh ketundukan",
+      "memohon pertolongan dan penguatan"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "menundukkan diri beribadah penuh ketundukan",
+        "root": "ع-ب-د",
+        "arabic_text": "العِبادَةُ: الطَّاعَةُ مَعَ الخُضُوعِ والتَّذَلُّلِ لأَمْرِ اللَّهِ، ومِنْهُ طَرِيقٌ مُعَبَّدٌ أَي مُذَلَّلٌ لِلسَّالِكِينَ",
+        "explanation": "Al-'Ibadah adalah puncak ketundukan batin dan ketaatan lahiriah yang tidak boleh ditujukan kepada selain Allah."
+      },
+      {
+        "keyword": "memohon pertolongan dan penguatan",
+        "root": "ع-و-ن",
+        "arabic_text": "الاسْتِعانَةُ: طَلَبُ العَوْنِ، وهُوَ النُّصْرَةُ والمُعاوَنَةُ والتَّأْيِيدُ فِي إِقامَةِ الأُمُورِ",
+        "explanation": "Al-Isti'anah adalah pengakuan atas kelemahan diri makhluk sehingga senantiasa bergantung pada taufiq dan pertolongan Ilahi."
+      }
+    ]
   }, {
     "number": 6,
     "text": "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ",
     "translation_en": "Guide us to the straight path -",
-    "translation_id": "Tunjukilah kami jalan yang lurus,"
+    "translation_id": "Bimbinglah dan teguhkanlah kami pada jalan terang yang lurus sempurna (tanpa penyimpangan dan keraguan),",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "jalan terang yang lurus sempurna"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "jalan terang yang lurus sempurna",
+        "root": "ص-ر-ط",
+        "arabic_text": "الصِّراطُ: الطَّرِيقُ الواضِحُ... والمُسْتَقِيمُ: الَّذِي لا اعْوِجاجَ فِيهِ، مِنْ قامَ إِذا اعْتَدَلَ واسْتَقامَ",
+        "explanation": "Ash-Shirath al-Mustaqim adalah jalan kebenaran yang gamblang, lempang, selaras dengan fitrah, dan mengantarkan langsung kepada keselamatan abadi."
+      }
+    ]
   }, {
     "number": 7,
     "text": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ",
     "translation_en": "The path of those upon whom You have bestowed favor, not of those who have evoked [Your] anger or of those who are astray.",
-    "translation_id": "(yaitu) Jalan orang-orang yang telah Engkau beri nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) mereka yang sesat."
+    "translation_id": "(yaitu) jalan orang-orang yang telah Engkau limpahi kenikmatan petunjuk, bukan jalan mereka yang terkena murka (karena mengetahui kebenaran namun membangkang), dan bukan pula jalan mereka yang tersesat (karena menyimpang tanpa bimbingan ilmu).",
+    "translation_source": "Lisanul Arab - Ibnu Manzhur",
+    "highlight_keywords": [
+      "limpahi kenikmatan petunjuk",
+      "terkena murka",
+      "tersesat"
+    ],
+    "highlight_details": [
+      {
+        "keyword": "limpahi kenikmatan petunjuk",
+        "root": "ن-ع-م",
+        "arabic_text": "النِّعْمَةُ: الإِحْسانُ والتَّوْفِيقُ لِلْإِيمانِ والعَمَلِ الصَّالِحِ",
+        "explanation": "Kenikmatan hakiki berupa hidayah iman, keteguhan hati, dan kesalehan hidup para nabi dan orang-orang shiddiqin."
+      },
+      {
+        "keyword": "terkena murka",
+        "root": "غ-ض-ب",
+        "arabic_text": "الغَضَبُ: نَقِيضُ الرِّضا... ومَغْضُوبٌ عَلَيْهِمْ: مَنْ عَرَفُوا الحَقَّ وتَعَمَّدُوا الإِعْراضَ عَنْهُ وعِصْيانَهُ",
+        "explanation": "Al-Maghdhub 'alaihim adalah mereka yang telah sampai kepadanya ilmu dan kebenaran, namun menentang dan memilih jalan kefasikan."
+      },
+      {
+        "keyword": "tersesat",
+        "root": "ض-ل-ل",
+        "arabic_text": "الضَّلالُ: العُدُولُ عَنِ الطَّرِيقِ المُسْتَقِيمِ وعَنِ الحَقِّ عَنْ جَهْلٍ أَوْ غَفْلَةٍ",
+        "explanation": "Adh-Dhallin adalah mereka yang tergelincir dari jalan keselamatan karena kebodohan, hawa nafsu, dan taklid buta."
+      }
+    ]
   }],
   "tafsir": {
     "id": {
