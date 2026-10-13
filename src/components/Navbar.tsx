@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div className="leading-tight">
               <span className="block text-lg font-bold tracking-tight text-slate-900">Alquran Counter</span>
-              <span className="block text-xs text-slate-500 font-semibold">Hisabul Jumal · 114 Surat</span>
+              <span className="block text-xs text-slate-500 font-semibold">Baca & Tadabbur · 114 Surat</span>
             </div>
           </button>
 
