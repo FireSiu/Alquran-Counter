@@ -12,11 +12,21 @@ export interface SurahMeta {
   recitation?: string;
 }
 
+export interface VerseHighlightDetail {
+  keyword: string;
+  root: string;
+  arabic_text: string;
+  explanation: string;
+}
+
 export interface Verse {
   number: number;
   text: string;
   translation_en: string;
   translation_id: string;
+  translation_source?: string;
+  highlight_keywords?: string[];
+  highlight_details?: VerseHighlightDetail[];
 }
 
 export interface Reciter {

@@ -184,6 +184,24 @@ export function stripLeadingBismillah(surahNumber: number, ayahNumber: number, t
   return text;
 }
 
+/**
+ * Menghapus semua harakat (tashkeel), tanwin, sukun, shaddah, tanda waqaf,
+ * dagger alif, dan simbol quranik untuk menghasilkan teks Arab rasm tanpa harakat (gundul).
+ */
+export function stripTashkeel(text: string): string {
+  if (!text) return '';
+  return text
+    // Harakat dasar (fathatan, dammatan, kasratan, fathah, dammah, kasrah, shaddah, sukun, dsb)
+    .replace(/[\u064B-\u065F]/g, '')
+    // Dagger alif & tatweel
+    .replace(/[\u0670\u0640]/g, '')
+    // Simbol Quranik, tanda waqaf, nomor tanda baca (U+06D6 - U+06ED, U+0610 - U+061A)
+    .replace(/[\u06D6-\u06ED\u0610-\u061A]/g, '')
+    // Bersihkan spasi ganda
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export function formatNumber(n: number): string {
   return n.toLocaleString('id-ID');
 }

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { CheckCircle, Bookmark, Calculator, ChevronDown, Copy as CopyIcon, Link2 } from 'lucide-react';
 import { Verse, SurahMeta } from '../types/quran';
-import { abjadBreakdown, formatNumber, stripLeadingBismillah } from '../utils/abjad';
+import { abjadBreakdown, formatNumber, stripLeadingBismillah, stripTashkeel } from '../utils/abjad';
 import { ayatInOtherSurahsWithValue } from '../utils/abjadStats';
 import { renderHighlightedTranslation } from '../utils/highlightKeywords';
 import { LetterBreakdown } from './LetterBreakdown';
@@ -16,6 +16,7 @@ interface VerseCardProps {
   flash: boolean;
   isRead: boolean;
   arabicClass: string;
+  showHarakat?: boolean;
   onToggleRead: () => void;
   onSetLastRead: () => void;
   onJumpAyah: (ayah: number) => void;
@@ -32,6 +33,7 @@ export const VerseCard: React.FC<VerseCardProps> = ({
   flash,
   isRead,
   arabicClass,
+  showHarakat = false,
   onToggleRead,
   onSetLastRead,
   onJumpAyah,
@@ -40,10 +42,10 @@ export const VerseCard: React.FC<VerseCardProps> = ({
   const [open, setOpen] = useState(false);
   const [showOthers, setShowOthers] = useState(false);
 
-  const text = useMemo(
-    () => stripLeadingBismillah(surahNumber, verse.number, verse.text),
-    [surahNumber, verse.number, verse.text]
-  );
+  const text = useMemo(() => {
+    const stripped = stripLeadingBismillah(surahNumber, verse.number, verse.text);
+    return showHarakat ? stripped : stripTashkeel(stripped);
+  }, [surahNumber, verse.number, verse.text, showHarakat]);
   const breakdown = useMemo(() => abjadBreakdown(text), [text]);
   const others = useMemo(
     () => ayatInOtherSurahsWithValue(breakdown.total, surahNumber),
@@ -137,9 +139,17 @@ export const VerseCard: React.FC<VerseCardProps> = ({
       </p>
 
       {/* Terjemahan Bahasa Indonesia */}
-      <p className="mt-4 text-base sm:text-lg text-slate-700 font-medium leading-relaxed">
-        {renderHighlightedTranslation(verse.translation_id)}
-      </p>
+      <div className="mt-4">
+        {verse.translation_source && (
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mb-1.5 rounded-lg bg-emerald-50 border border-emerald-200/90 text-[11px] font-bold text-emerald-800">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Kajian: {verse.translation_source}</span>
+          </div>
+        )}
+        <p className="text-base sm:text-lg text-slate-700 font-medium leading-relaxed">
+          {renderHighlightedTranslation(verse.translation_id)}
+        </p>
+      </div>
 
       {/* Baris Bawah: Total Nilai Hisab + Rincian & Badge Ayat Kembar */}
       <div className="mt-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-slate-100">

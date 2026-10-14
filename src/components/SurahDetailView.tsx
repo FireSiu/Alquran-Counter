@@ -50,6 +50,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [fontSize, setFontSize] = useState<keyof typeof FONT_SIZES>('large');
+  const [showHarakat, setShowHarakat] = useState(false); // default: false (Tanpa Harakat / Gundul)
   const [dupFilter, setDupFilter] = useState<'off' | 'all' | number>('off'); // number = group value
   const [flashAyah, setFlashAyah] = useState<number | null>(null);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -299,6 +300,34 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                 </button>
               ))}
             </div>
+
+            {/* Toggle Teks Tanpa Harakat (Gundul) vs Berharakat */}
+            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+              <button
+                type="button"
+                onClick={() => setShowHarakat(false)}
+                className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold cursor-pointer transition-all ${
+                  !showHarakat
+                    ? 'bg-emerald-600 text-white shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+                title="Tampilkan teks Al-Qur'an rasm tanpa harakat (gundul)"
+              >
+                Tanpa Harakat
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowHarakat(true)}
+                className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold cursor-pointer transition-all ${
+                  showHarakat
+                    ? 'bg-emerald-600 text-white shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+                title="Tampilkan teks dengan harakat lengkap"
+              >
+                Berharakat
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -425,7 +454,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
       {surahNumber !== 1 && surahNumber !== 9 && (
         <div className="text-center py-6 mb-5 rounded-2xl bg-white border border-slate-200">
           <p className="font-arabic text-3xl sm:text-4xl text-slate-800" dir="rtl">
-            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+            {showHarakat ? 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ' : 'بسم الله الرحمن الرحيم'}
           </p>
           <p className="text-sm text-slate-500 font-semibold mt-2">
             Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang
@@ -449,6 +478,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               flash={flashAyah === verse.number}
               isRead={isRead(verse.number)}
               arabicClass={FONT_SIZES[fontSize]}
+              showHarakat={showHarakat}
               onToggleRead={() => onToggleRead(surahNumber, verse.number)}
               onSetLastRead={() => onSetLastRead(surahNumber, surah.name, verse.number)}
               onJumpAyah={jumpToAyah}
