@@ -193,10 +193,12 @@ export function stripTashkeel(text: string): string {
   return text
     // Harakat dasar (fathatan, dammatan, kasratan, fathah, dammah, kasrah, shaddah, sukun, dsb)
     .replace(/[\u064B-\u065F]/g, '')
-    // Dagger alif & tatweel
+    // Dagger alif (ٰ) & tatweel (ـ)
     .replace(/[\u0670\u0640]/g, '')
-    // Simbol Quranik, tanda waqaf, nomor tanda baca (U+06D6 - U+06ED, U+0610 - U+061A)
-    .replace(/[\u06D6-\u06ED\u0610-\u061A]/g, '')
+    // Simbol Quranik, tanda waqaf, nomor tanda baca, maddah (U+06D6 - U+06ED, U+0610 - U+061A, U+0653 - U+0655)
+    .replace(/[\u06D6-\u06ED\u0610-\u061A\u0653-\u0655]/g, '')
+    // Ubah Alif Wasla (ٱ) menjadi Alif standar (ا)
+    .replace(/\u0671/g, 'ا')
     // Bersihkan spasi ganda
     .replace(/\s+/g, ' ')
     .trim();

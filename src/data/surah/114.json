@@ -8,142 +8,71 @@
   "number_of_ayah": 6,
   "number_of_surah": 114,
   "place": "Mecca",
-  "recitations": [{
-    "name": "Mishari Rashid al-`Afasy",
-    "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/114.mp3"
-  }, {
-    "name": "Abdur-Rahman as-Sudais",
-    "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/114.mp3"
-  }, {
-    "name": "Saad al-Ghamdi",
-    "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/114.mp3"
-  }],
+  "recitations": [
+    {
+      "name": "Mishari Rashid al-`Afasy",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/114.mp3"
+    },
+    {
+      "name": "Abdur-Rahman as-Sudais",
+      "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/114.mp3"
+    },
+    {
+      "name": "Saad al-Ghamdi",
+      "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/114.mp3"
+    }
+  ],
   "type": "Makkiyah",
-  "verses": [{
-    "number": 1,
-    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
-    "translation_en": "Say, \"I seek refuge in the Lord of mankind,",
-    "translation_id": "Katakanlah: Aku berlindung dan berpegang teguh kepada Pemelihara, Pencipta, dan Pengatur seluruh manusia,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "Pemelihara, Pencipta, dan Pengatur"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "Pemelihara, Pencipta, dan Pengatur",
-        "root": "ر-ب-ب",
-        "arabic_text": "الرَّبُّ: هُوَ اللَّهُ عَزَّ وَجَلَّ، رَبُّ كُلِّ شَيْءٍ أَي مالِكُه ومُرَبِّيه ومُصْلِحُه، ولَهُ الرُّبوبِيَّةُ عَلَى جَمِيعِ الخَلْقِ",
-        "explanation": "Ar-Rabb adalah Pemilik mutlak yang mengasuh, mencukupi kebutuhan, dan memelihara seluruh ciptaan."
-      }
-    ]
-  }, {
-    "number": 2,
-    "text": "مَلِكِ ٱلنَّاسِ",
-    "translation_en": "The Sovereign of mankind.",
-    "translation_id": "Raja dan Penguasa Tertinggi yang memegang kedaulatan mutlak atas seluruh manusia,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "Raja dan Penguasa Tertinggi"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "Raja dan Penguasa Tertinggi",
-        "root": "م-ل-ك",
-        "arabic_text": "المَلِكُ: ذُو المُلْكِ، والمُلْكُ: احْتِواءُ الشَّيْءِ والاسْتِبْدادُ بالتَّصَرُّفِ فِيهِ والأَمْرُ والنَّهْيُ... القاهِرُ لَهُمْ",
-        "explanation": "Al-Malik adalah Dzat yang memiliki kekuasaan mutlak memerintah, melarang, dan menundukkan seluruh makhluk tanpa ada yang mampu menentang-Nya."
-      }
-    ]
-  }, {
-    "number": 3,
-    "text": "إِلَٰهِ ٱلنَّاسِ",
-    "translation_en": "The God of mankind,",
-    "translation_id": "Sesembahan Yang Haq, satu-satunya yang berhak diibadahi oleh seluruh manusia,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "Sesembahan Yang Haq",
-      "satu-satunya yang berhak diibadahi"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "Sesembahan Yang Haq",
-        "root": "أ-ل-ه",
-        "arabic_text": "الإِلهُ: هُوَ اللَّهُ، وكُلُّ ما اتُّخِذَ مَعْبُوداً... مِن أَلِهَ يَأْلَهُ إِذا عَبَدَ، وأَلِهَ إِلَيْهِ أَي سَكَنَ إِلَيْهِ واشْتاقَ",
-        "explanation": "Al-Ilah adalah Dzat yang dipuja dengan penuh cinta, ketundukan mutlak, dan tempat jiwa berlabuh mencari ketenteraman."
-      }
-    ]
-  }, {
-    "number": 4,
-    "text": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
-    "translation_en": "From the evil of the retreating whisperer -",
-    "translation_id": "dari kejahatan bisikan halus penghembus keraguan yang bersembunyi menyelinap saat mengingat Allah,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "bisikan halus penghembus keraguan",
-      "bersembunyi menyelinap"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "bisikan halus penghembus keraguan",
-        "root": "و-س-و-س",
-        "arabic_text": "الوَسْواسُ: الصَّوْتُ الخَفِيُّ، وحَدِيثُ النَّفْسِ بالشَّرِّ... وإِلْقاءُ الشَّكِّ فِي القَلْبِ",
-        "explanation": "Al-Waswas adalah bisikan sangat tersembunyi yang ditiupkan berulang-ulang untuk menanamkan kebimbangan dan keburukan batin."
-      },
-      {
-        "keyword": "bersembunyi menyelinap",
-        "root": "خ-ن-س",
-        "arabic_text": "الخَنَّاسُ: المُتَوارِي المُتَأَخِّرُ... إِبليس يُوَسْوِسُ فِي صُدُورِ النَّاسِ، فإِذا ذُكِرَ اللَّه خَنَسَ وتَنَحَّى",
-        "explanation": "Al-Khannas adalah sifat penggoda yang lekas ciut, mundur, dan menyembunyikan diri ketika nama Allah diingat dan diagungkan."
-      }
-    ]
-  }, {
-    "number": 5,
-    "text": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
-    "translation_en": "Who whispers [evil] into the breasts of mankind -",
-    "translation_id": "yang terus menyusupkan godaan dan prasangka buruk ke dalam rongga dada (hati) manusia,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "menyusupkan godaan dan prasangka buruk",
-      "rongga dada (hati)"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "menyusupkan godaan dan prasangka buruk",
-        "root": "و-س-و-س",
-        "arabic_text": "يُوَسْوِسُ: أَي يُلْقِي الكَلامَ الخَفِيَّ فِي النَّفْسِ لِيَفْتِنَها عَنِ الحَقِّ",
-        "explanation": "Gerakan menggoda secara halus tanpa suara lahiriah untuk membelokkan kompas moral dan keimanan manusia."
-      },
-      {
-        "keyword": "rongga dada (hati)",
-        "root": "ص-د-ر",
-        "arabic_text": "الصَّدْرُ: مَقَرُّ القُلُوبِ والأَفْئِدَةِ ومَوْضِعُ الأَسْرارِ والخَواطِرِ... وَلكِنْ تَعْمَى الْقُلُوبُ الَّتِي فِي الصُّدُورِ",
-        "explanation": "Ash-Shadr adalah wadah batin tempat bersemayamnya kalbu, niat, lintasan pikiran, dan tekad perbuatan manusia."
-      }
-    ]
-  }, {
-    "number": 6,
-    "text": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
-    "translation_en": "From among the jinn and mankind.\"",
-    "translation_id": "baik dari golongan makhluk halus (jin) maupun dari bangsa manusia (yang berbuat jahat).",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "makhluk halus (jin)",
-      "bangsa manusia"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "makhluk halus (jin)",
-        "root": "ج-ن-ن",
-        "arabic_text": "جَنَّ الشيءَ: سَتَره، وسُمِّيَ الجِنُّ لاسْتِتارِهم واخْتِفائهم عَنِ الأَبصار",
-        "explanation": "Al-Jinnah adalah entitas yang tersembunyi/tidak kasat mata oleh pandangan indrawi manusia."
-      },
-      {
-        "keyword": "bangsa manusia",
-        "root": "ن-و-س",
-        "arabic_text": "النَّاسُ: بَنُو آدَمَ... وَمِنَ النَّاسِ شَياطِينُ الإِنْسِ يُوَسْوِسُونَ كَمَا تُوَسْوِسُ شَياطِينُ الجِنِّ",
-        "explanation": "An-Nas adalah sesama manusia yang perilakunya menghasut, menyesatkan, dan merusak pikiran sesamanya."
-      }
-    ]
-  }],
+  "verses": [
+    {
+      "number": 1,
+      "text": "قل أعوذ برب الناس",
+      "text_with_harakat": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+      "translation_en": "Say, \"I seek refuge in the Lord of mankind,",
+      "translation_id": "Katakanlah: Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 2,
+      "text": "ملك الناس",
+      "text_with_harakat": "مَلِكِ ٱلنَّاسِ",
+      "translation_en": "The Sovereign of mankind.",
+      "translation_id": "Raja manusia.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 3,
+      "text": "إله الناس",
+      "text_with_harakat": "إِلَٰهِ ٱلنَّاسِ",
+      "translation_en": "The God of mankind,",
+      "translation_id": "Sembahan manusia.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 4,
+      "text": "من شر الوسواس الخناس",
+      "text_with_harakat": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
+      "translation_en": "From the evil of the retreating whisperer -",
+      "translation_id": "Dari kejahatan (bisikan) syaitan yang biasa bersembunyi,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 5,
+      "text": "الذى يوسوس فى صدور الناس",
+      "text_with_harakat": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
+      "translation_en": "Who whispers [evil] into the breasts of mankind -",
+      "translation_id": "yang membisikkan (kejahatan) ke dalam dada manusia,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 6,
+      "text": "من الجنة والناس",
+      "text_with_harakat": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+      "translation_en": "From among the jinn and mankind.\"",
+      "translation_id": "dari (golongan) jin dan manusia.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    }
+  ],
   "tafsir": {
     "id": {
       "kemenag": {

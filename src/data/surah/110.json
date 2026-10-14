@@ -8,33 +8,44 @@
   "number_of_ayah": 3,
   "number_of_surah": 110,
   "place": "Medina",
-  "recitations": [{
-    "name": "Mishari Rashid al-`Afasy",
-    "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/110.mp3"
-  }, {
-    "name": "Abdur-Rahman as-Sudais",
-    "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/110.mp3"
-  }, {
-    "name": "Saad al-Ghamdi",
-    "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/110.mp3"
-  }],
+  "recitations": [
+    {
+      "name": "Mishari Rashid al-`Afasy",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/110.mp3"
+    },
+    {
+      "name": "Abdur-Rahman as-Sudais",
+      "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/110.mp3"
+    },
+    {
+      "name": "Saad al-Ghamdi",
+      "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/110.mp3"
+    }
+  ],
   "type": "Madaniyah",
-  "verses": [{
-    "number": 1,
-    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ",
-    "translation_en": "When the victory of Allah has come and the conquest,",
-    "translation_id": "Apabila telah datang pertolongan Allah dan kemenangan,"
-  }, {
-    "number": 2,
-    "text": "وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا",
-    "translation_en": "And you see the people entering into the religion of Allah in multitudes,",
-    "translation_id": "dan kamu lihat manusia masuk agama Allah dengan berbondong-bondong,"
-  }, {
-    "number": 3,
-    "text": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ إِنَّهُۥ كَانَ تَوَّابًۢا",
-    "translation_en": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance.",
-    "translation_id": "maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sesungguhnya Dia adalah Maha Penerima taubat."
-  }],
+  "verses": [
+    {
+      "number": 1,
+      "text": "بسم الله الرحمن الرحيم إذا جاء نصر الله والفتح",
+      "translation_en": "When the victory of Allah has come and the conquest,",
+      "translation_id": "Apabila telah datang pertolongan Allah dan kemenangan,",
+      "text_with_harakat": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ"
+    },
+    {
+      "number": 2,
+      "text": "ورأيت الناس يدخلون فى دين الله أفواجا",
+      "translation_en": "And you see the people entering into the religion of Allah in multitudes,",
+      "translation_id": "dan kamu lihat manusia masuk agama Allah dengan berbondong-bondong,",
+      "text_with_harakat": "وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا"
+    },
+    {
+      "number": 3,
+      "text": "فسبح بحمد ربك واستغفره إنه كان توابا",
+      "translation_en": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance.",
+      "translation_id": "maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sesungguhnya Dia adalah Maha Penerima taubat.",
+      "text_with_harakat": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ إِنَّهُۥ كَانَ تَوَّابًۢا"
+    }
+  ],
   "tafsir": {
     "id": {
       "kemenag": {

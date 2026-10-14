@@ -1,37 +1,42 @@
 import rawSurahList from '../data/quran.json';
 import { SurahDetail, SurahMeta } from '../types/quran';
+import { stripTashkeel } from './abjad';
+
+/**
+ * Memastikan teks ayat 100% rasm murni tanpa harakat,
+ * menyimpan teks berharakat di text_with_harakat,
+ * dan menjaga terjemahan bahasa Indonesia dan tafsirnya tetap utuh 100%.
+ */
+export function sanitizeSurahDetail(data: SurahDetail): SurahDetail {
+  if (!data || !data.verses) return data;
+  return {
+    ...data,
+    verses: data.verses.map((v) => ({
+      ...v,
+      text_with_harakat: v.text_with_harakat || v.text,
+      text: stripTashkeel(v.text),
+      translation_id: v.translation_id,
+      translation_en: v.translation_en,
+    })),
+  };
+}
 
 // In-memory cache for loaded surah details
 const surahCache = new Map<number, SurahDetail>();
 
-// Surahs bundled locally for offline instant loading
-import surah1 from '../data/surah/1.json';
-import surah36 from '../data/surah/36.json';
-import surah67 from '../data/surah/67.json';
-import surah108 from '../data/surah/108.json';
-import surah109 from '../data/surah/109.json';
-import surah110 from '../data/surah/110.json';
-import surah111 from '../data/surah/111.json';
-import surah112 from '../data/surah/112.json';
-import surah113 from '../data/surah/113.json';
-import surah114 from '../data/surah/114.json';
+// Surahs bundled locally for offline instant loading (otomatis memuat semua file JSON di folder surah/)
+const localSurahModules = import.meta.glob<any>('../data/surah/*.json', { eager: true });
+const BUNDLED_SURAHS: Record<number, SurahDetail> = {};
 
-const BUNDLED_SURAHS: Record<number, any> = {
-  1: surah1,
-  36: surah36,
-  67: surah67,
-  108: surah108,
-  109: surah109,
-  110: surah110,
-  111: surah111,
-  112: surah112,
-  113: surah113,
-  114: surah114,
-};
-
-// Populate memory cache with bundled surahs
-Object.entries(BUNDLED_SURAHS).forEach(([key, val]) => {
-  surahCache.set(Number(key), val as SurahDetail);
+Object.entries(localSurahModules).forEach(([filePath, mod]) => {
+  const match = filePath.match(/[\\/](\d+)\.json$/);
+  if (match) {
+    const num = Number(match[1]);
+    const rawData = (mod.default || mod) as SurahDetail;
+    const sanitized = sanitizeSurahDetail(rawData);
+    BUNDLED_SURAHS[num] = sanitized;
+    surahCache.set(num, sanitized);
+  }
 });
 
 export const ALL_SURAHS: SurahMeta[] = rawSurahList as SurahMeta[];
@@ -57,26 +62,27 @@ export async function getSurahDetail(surahNumber: number): Promise<SurahDetail> 
     return surahCache.get(surahNumber)!;
   }
 
-  // 2. Check localStorage cache
+  // 2. Check bundled local files FIRST (agar pembaruan JSON lokal selalu diutamakan)
+  if (BUNDLED_SURAHS[surahNumber]) {
+    const detail = BUNDLED_SURAHS[surahNumber] as SurahDetail;
+    surahCache.set(surahNumber, detail);
+    return detail;
+  }
+
+  // 3. Check localStorage cache
   const cacheKey = `alquran_surah_v1_${surahNumber}`;
   try {
     const cached = localStorage.getItem(cacheKey);
     if (cached) {
       const parsed = JSON.parse(cached) as SurahDetail;
       if (parsed && parsed.verses && parsed.verses.length > 0) {
-        surahCache.set(surahNumber, parsed);
-        return parsed;
+        const sanitized = sanitizeSurahDetail(parsed);
+        surahCache.set(surahNumber, sanitized);
+        return sanitized;
       }
     }
   } catch {
     // ignore localStorage errors
-  }
-
-  // 3. Check bundled fallback
-  if (BUNDLED_SURAHS[surahNumber]) {
-    const detail = BUNDLED_SURAHS[surahNumber] as SurahDetail;
-    surahCache.set(surahNumber, detail);
-    return detail;
   }
 
   // 4. Fetch from official QuranJSON repository
@@ -88,7 +94,8 @@ export async function getSurahDetail(surahNumber: number): Promise<SurahDetail> 
       throw new Error(`Gagal memuat surat nomor ${surahNumber} (HTTP ${response.status})`);
     }
 
-    const data = (await response.json()) as SurahDetail;
+    const rawData = (await response.json()) as SurahDetail;
+    const data = sanitizeSurahDetail(rawData);
 
     // Cache locally
     surahCache.set(surahNumber, data);

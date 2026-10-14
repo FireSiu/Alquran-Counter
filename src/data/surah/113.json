@@ -8,131 +8,63 @@
   "number_of_ayah": 5,
   "number_of_surah": 113,
   "place": "Mecca",
-  "recitations": [{
-    "name": "Mishari Rashid al-`Afasy",
-    "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/113.mp3"
-  }, {
-    "name": "Abdur-Rahman as-Sudais",
-    "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/113.mp3"
-  }, {
-    "name": "Saad al-Ghamdi",
-    "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/113.mp3"
-  }],
+  "recitations": [
+    {
+      "name": "Mishari Rashid al-`Afasy",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/113.mp3"
+    },
+    {
+      "name": "Abdur-Rahman as-Sudais",
+      "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/113.mp3"
+    },
+    {
+      "name": "Saad al-Ghamdi",
+      "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/113.mp3"
+    }
+  ],
   "type": "Makkiyah",
-  "verses": [{
-    "number": 1,
-    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
-    "translation_en": "Say, \"I seek refuge in the Lord of daybreak",
-    "translation_id": "Katakanlah: Aku berlindung dan berpegang teguh kepada Tuhan Pembelah fajar (yang merekah dan mengusir kegelapan),",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "berlindung dan berpegang teguh",
-      "Pembelah fajar"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "berlindung dan berpegang teguh",
-        "root": "ع-و-ذ",
-        "arabic_text": "عاذَ به يَعُوذُ عَوْذاً وعِياذاً ومَعاذاً: لَجَأَ إِليه واستَجارَ به واعتَصَم... أَي امْتَنَعَ بِهِ وتَحَصَّنَ",
-        "explanation": "Al-'Audz bermakna bersandar, berpegang teguh, dan memohon benteng perlindungan mutlak dari marabahaya."
-      },
-      {
-        "keyword": "Pembelah fajar",
-        "root": "ف-ل-ق",
-        "arabic_text": "الفَلْق: الشَّقُّ... والفَلَقُ: الصُّبْحُ لأَنَّهُ يَنْفَلِقُ عَنْهُ ظَلَامُ اللَّيْلِ... وَقِيلَ: الفَلَقُ الخَلْقُ كُلُّه",
-        "explanation": "Al-Falaq adalah fajar subuh yang terbelah merekah mengusir pekatnya malam, atau belahan benih penciptaan seluruh makhluk."
-      }
-    ]
-  }, {
-    "number": 2,
-    "text": "مِن شَرِّ مَا خَلَقَ",
-    "translation_en": "From the evil of that which He created",
-    "translation_id": "dari kejahatan, bahaya, dan keburukan segala apa yang telah Dia ciptakan,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "kejahatan, bahaya, dan keburukan"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "kejahatan, bahaya, dan keburukan",
-        "root": "ش-ر-ر",
-        "arabic_text": "الشَّرُّ: نَقِيضُ الخَيْرِ، والجَمْعُ شُرُورٌ... ورَجُلٌ شِرِّيرٌ أَي كَثِيرُ الشَّرِّ والفَسادِ",
-        "explanation": "Asy-Syarru adalah lawan dari kebaikan, mencakup segala bentuk mudarat, kerusakan, aniaya, dan bahaya dari makhluk."
-      }
-    ]
-  }, {
-    "number": 3,
-    "text": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
-    "translation_en": "And from the evil of darkness when it settles",
-    "translation_id": "dan dari kejahatan malam yang pekat apabila telah merayap menyusup (menutupi alam semesta),",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "malam yang pekat",
-      "merayap menyusup"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "malam yang pekat",
-        "root": "غ-س-ق",
-        "arabic_text": "الغاسِقُ: اللَّيْلُ إِذا أَظْلَمَ وامْتَلأَ ظَلاماً... والغَسَقُ: ظُلْمَةُ أَوَّلِ اللَّيْلِ",
-        "explanation": "Al-Ghasasiq adalah malam saat kegelapannya telah memuncak dan menyelimuti penuh."
-      },
-      {
-        "keyword": "merayap menyusup",
-        "root": "و-ق-ب",
-        "arabic_text": "وَقَبَ الشيءُ يَقِبُ وَقْباً: دَخَلَ... الْفَرَّاءُ: الغاسِقُ اللَّيْلُ؛ إِذا وَقَبَ إِذا دخَل فِي كُلِّ شَيْءٍ وأَظْلَمَ",
-        "explanation": "Waqaba maknanya kegelapan malam yang telah masuk dan menyusup ke setiap celah sehingga menyamarkan bahaya."
-      }
-    ]
-  }, {
-    "number": 4,
-    "text": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ",
-    "translation_en": "And from the evil of the blowers in knots",
-    "translation_id": "dan dari kejahatan para peniup hembusan mantra pada simpul-simpul ikatan,",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "para peniup hembusan mantra",
-      "simpul-simpul ikatan"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "para peniup hembusan mantra",
-        "root": "ن-ف-ث",
-        "arabic_text": "النَّفْثُ: شَبِيهٌ بِالنَّفْخِ... نَفَثَ الرَّاقي... والحيَّةُ تَنْفُثُ السمَّ",
-        "explanation": "An-Naffatsat adalah para pelaku tipu daya jahat/sihir yang meniupkan hembusan disertai kejahatan jiwa bagai ular menyemburkan bisa."
-      },
-      {
-        "keyword": "simpul-simpul ikatan",
-        "root": "ع-ق-د",
-        "arabic_text": "العَقْد: نَقِيضُ الحَلِّ... تَعْقادُ التمائم... عَقْدُ الحَبْلِ",
-        "explanation": "Al-'Uqad adalah ikatan atau buhul-buhul perjanjian/tali batin yang disimpulkan untuk merusak hubungan dan jiwa manusia."
-      }
-    ]
-  }, {
-    "number": 5,
-    "text": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
-    "translation_en": "And from the evil of an envier when he envies.\"",
-    "translation_id": "dan dari kejahatan orang yang dengki apabila dia melancarkan kedengkiannya.",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "orang yang dengki",
-      "melancarkan kedengkiannya"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "orang yang dengki",
-        "root": "ح-س-د",
-        "arabic_text": "الْحَسَدُ أَن تَتَمَنَّى زَوَالَ نِعْمَةِ الْمَحْسُودِ إِليك أَو يُسْلَبَها",
-        "explanation": "Hasid adalah orang yang berpenyakit hati menginginkan hilangnya karunia dari orang lain."
-      },
-      {
-        "keyword": "melancarkan kedengkiannya",
-        "root": "ح-س-د",
-        "arabic_text": "إِذا حَسَدَ: أَي إِذا أَظْهَرَ مَا فِي نَفْسِهِ وأَعْمَلَهُ بالشَّرِّ والكَيْدِ",
-        "explanation": "Idza hasad maknanya ketika ia mulai menggerakkan niat jahatnya melalui perbuatan, ucapan, atau pandangan yang mencelakakan."
-      }
-    ]
-  }],
+  "verses": [
+    {
+      "number": 1,
+      "text": "قل أعوذ برب الفلق",
+      "text_with_harakat": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+      "translation_en": "Say, \"I seek refuge in the Lord of daybreak",
+      "translation_id": "Katakanlah: Aku berlindung kepada Tuhan Yang Menguasai subuh,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 2,
+      "text": "من شر ما خلق",
+      "text_with_harakat": "مِن شَرِّ مَا خَلَقَ",
+      "translation_en": "From the evil of that which He created",
+      "translation_id": "dari kejahatan makhluk-Nya,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 3,
+      "text": "ومن شر غاسق إذا وقب",
+      "text_with_harakat": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+      "translation_en": "And from the evil of darkness when it settles",
+      "translation_id": "dan dari kejahatan malam apabila telah gelap gulita,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 4,
+      "text": "ومن شر النفثت فى العقد",
+      "text_with_harakat": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ",
+      "translation_en": "And from the evil of the blowers in knots",
+      "translation_id": "dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 5,
+      "text": "ومن شر حاسد إذا حسد",
+      "text_with_harakat": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+      "translation_en": "And from the evil of an envier when he envies.\"",
+      "translation_id": "dan dari kejahatan pendengki bila ia dengki.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    }
+  ],
   "tafsir": {
     "id": {
       "kemenag": {

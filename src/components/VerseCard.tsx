@@ -43,9 +43,13 @@ export const VerseCard: React.FC<VerseCardProps> = ({
   const [showOthers, setShowOthers] = useState(false);
 
   const text = useMemo(() => {
-    const stripped = stripLeadingBismillah(surahNumber, verse.number, verse.text);
-    return showHarakat ? stripped : stripTashkeel(stripped);
-  }, [surahNumber, verse.number, verse.text, showHarakat]);
+    if (showHarakat) {
+      const sourceWithHarakat = verse.text_with_harakat || verse.text;
+      return stripLeadingBismillah(surahNumber, verse.number, sourceWithHarakat);
+    }
+    const raw = stripLeadingBismillah(surahNumber, verse.number, verse.text);
+    return stripTashkeel(raw);
+  }, [surahNumber, verse.number, verse.text, verse.text_with_harakat, showHarakat]);
   const breakdown = useMemo(() => abjadBreakdown(text), [text]);
   const others = useMemo(
     () => ayatInOtherSurahsWithValue(breakdown.total, surahNumber),
@@ -140,15 +144,36 @@ export const VerseCard: React.FC<VerseCardProps> = ({
 
       {/* Terjemahan Bahasa Indonesia */}
       <div className="mt-4">
-        {verse.translation_source && (
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mb-1.5 rounded-lg bg-emerald-50 border border-emerald-200/90 text-[11px] font-bold text-emerald-800">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Kajian: {verse.translation_source}</span>
-          </div>
-        )}
         <p className="text-base sm:text-lg text-slate-700 font-medium leading-relaxed">
           {renderHighlightedTranslation(verse.translation_id)}
         </p>
+
+        {/* Kajian Leksikal Akar Kata Lisanul Arab */}
+        {verse.highlight_details && verse.highlight_details.length > 0 && (
+          <div className="mt-3.5 space-y-2">
+            {verse.highlight_details.map((item, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl bg-amber-50/70 border border-amber-200/80 p-3 text-xs text-amber-950 space-y-1"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-1 font-bold">
+                  <span className="text-amber-900 flex items-center gap-1.5">
+                    <span className="px-1.5 py-0.5 rounded bg-amber-200/80 text-[11px] font-black">
+                      Akar: {item.root}
+                    </span>
+                    <span>«{item.keyword}»</span>
+                  </span>
+                  <span className="font-arabic text-sm text-slate-800" dir="rtl">
+                    {item.arabic_text.length > 70 ? `${item.arabic_text.slice(0, 70)}…` : item.arabic_text}
+                  </span>
+                </div>
+                <p className="text-slate-600 font-medium leading-relaxed">
+                  {item.explanation}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Baris Bawah: Total Nilai Hisab + Rincian & Badge Ayat Kembar */}

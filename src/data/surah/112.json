@@ -8,107 +8,55 @@
   "number_of_ayah": 4,
   "number_of_surah": 112,
   "place": "Mecca",
-  "recitations": [{
-    "name": "Mishari Rashid al-`Afasy",
-    "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3"
-  }, {
-    "name": "Abdur-Rahman as-Sudais",
-    "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/112.mp3"
-  }, {
-    "name": "Saad al-Ghamdi",
-    "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/112.mp3"
-  }],
+  "recitations": [
+    {
+      "name": "Mishari Rashid al-`Afasy",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3"
+    },
+    {
+      "name": "Abdur-Rahman as-Sudais",
+      "audio_url": "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/112.mp3"
+    },
+    {
+      "name": "Saad al-Ghamdi",
+      "audio_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/112.mp3"
+    }
+  ],
   "type": "Makkiyah",
-  "verses": [{
-    "number": 1,
-    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ هُوَ ٱللَّهُ أَحَدٌ",
-    "translation_en": "Say, \"He is Allah, [who is] One,",
-    "translation_id": "Katakanlah: Dialah Allah, Dzat Yang Maha Tunggal mutlak, tiada tandingan, tiada bandingan, dan tiada sekutu bagi-Nya.",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "Maha Tunggal mutlak",
-      "tiada tandingan"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "Maha Tunggal mutlak",
-        "root": "و-ح-د",
-        "arabic_text": "والوَحَدُ والأَحَدُ: كَالْوَاحِدِ هَمْزَتُهُ أَيضاً بَدَلٌ مِنْ وَاوٍ... والواحدُ بُنِيَ عَلَى انْقِطَاعِ النَّظِيرِ وعَوَزِ الْمِثْلِ... وَرَجُلٌ أَحَدٌ ووَحَدٌ ومُتَوَحِّد أَي مُنْفَرِدٌ",
-        "explanation": "Al-Ahad asalnya Al-Wahad: sesuatu yang tidak memiliki tandingan sama sekali (inqitha' an-nazhir), ketiadaan yang semisal dengannya ('awaz al-mitsl), dan Maha Menyendiri secara mutlak tanpa sekutu."
-      },
-      {
-        "keyword": "tiada tandingan",
-        "root": "و-ح-د",
-        "arabic_text": "والواحدُ بُنِيَ عَلَى انْقِطَاعِ النَّظِيرِ وعَوَزِ الْمِثْلِ",
-        "explanation": "Ketiadaan padanan atau tandingan apa pun dalam zat, sifat, dan perbuatan-Nya."
-      }
-    ]
-  }, {
-    "number": 2,
-    "text": "ٱللَّهُ ٱلصَّمَدُ",
-    "translation_en": "Allah, the Eternal Refuge.",
-    "translation_id": "Allah adalah Penguasa Tertinggi Yang Maha Ditaati, tumpuan akhir dari segala maksud dan kebutuhan seluruh makhluk, tiada perkara diputuskan tanpa-Nya.",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "Penguasa Tertinggi Yang Maha Ditaati",
-      "tumpuan akhir"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "Penguasa Tertinggi Yang Maha Ditaati",
-        "root": "ص-م-د",
-        "arabic_text": "والصَّمَد، بِالتَّحْرِيكِ: السَّيِّدُ المُطاع الَّذِي لَا يُقْضى دُونَهُ أَمر... وَهُوَ مِنَ الرِّجَالِ الَّذِي لَيْسَ فَوْقَهُ أَحد",
-        "explanation": "Ash-Shamad adalah Pemimpin Tertinggi yang ditaati mutlak, tiada urusan diputuskan tanpa-Nya, dan tidak ada yang berada di atas-Nya."
-      },
-      {
-        "keyword": "tumpuan akhir",
-        "root": "ص-م-د",
-        "arabic_text": "وَقِيلَ: الَّذِي يُصْمَدُ إِليه فِي الْحَوَائِجِ أَي يُقْصَدُ... لَا يَسْتَغْني عَنْهُ شَيْءٌ",
-        "explanation": "Tujuan dan tumpuan utama tempat seluruh makhluk bermaksud dan bersandar saat memerlukan segala hajat, dan tiada satu makhluk pun yang lepas dari butuh kepada-Nya."
-      }
-    ]
-  }, {
-    "number": 3,
-    "text": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
-    "translation_en": "He neither begets nor is born,",
-    "translation_id": "Dia tidak beranak (tidak melahirkan keturunan apa pun dari zat-Nya) dan tidak pula diperanakkan (tidak bermula dari asal maujud mana pun),",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "tidak beranak",
-      "tidak pula diperanakkan"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "tidak beranak",
-        "root": "و-ل-د",
-        "arabic_text": "الوَلَدُ والوُلْدُ: مَا وُلِدَ أَيًّا كَانَ... وَكُلُّ حَامِلٍ تَلِدُ",
-        "explanation": "Nafi bahwa Allah mengeluarkan keturunan biologis atau bagian terpisah dari zat-Nya."
-      },
-      {
-        "keyword": "tidak pula diperanakkan",
-        "root": "و-ل-د",
-        "arabic_text": "ومَوْلِدُ الرَّجُلِ: وقتُ وِلادِه، ومَوْلِدُه: الْمَوْضِعُ الَّذِي وُلِدَ فِيهِ",
-        "explanation": "Nafi bahwa keberadaan Allah bermula dari kelahiran atau berasal dari keberadaan zat sebelumnya."
-      }
-    ]
-  }, {
-    "number": 4,
-    "text": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
-    "translation_en": "Nor is there to Him any equivalent.\"",
-    "translation_id": "dan tidak ada satu pun yang setara, sebanding, atau semisal dengan-Nya.",
-    "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur",
-    "highlight_keywords": [
-      "setara, sebanding, atau semisal"
-    ],
-    "highlight_details": [
-      {
-        "keyword": "setara, sebanding, atau semisal",
-        "root": "ك-ف-أ",
-        "arabic_text": "والكَفِيءُ: النَّظِيرُ، وَكَذَلِكَ الكُفْءُ والكُفُوءُ... والكُفْءُ: النَّظِيرُ والمُساوِي... وَقَالَ الزَّجَّاجُ فِي قَوْلِهِ تَعَالَى: وَلَمْ يَكُنْ لَهُ كُفُواً أَحَدٌ: مَعْنَاهُ: لَمْ يَكُنْ أَحَدٌ مِثْلًا لِلَّهِ",
-        "explanation": "Al-Kufu' adalah nazhir (tandingan) dan musawi (yang setara/selevel). Az-Zajjaj menegaskan maknanya: tidak ada seorang pun atau sesuatu pun yang menyerupai atau sebanding dengan Allah."
-      }
-    ]
-  }],
+  "verses": [
+    {
+      "number": 1,
+      "text": "قل هو الله أحد",
+      "text_with_harakat": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+      "translation_en": "Say, \"He is Allah, [who is] One,",
+      "translation_id": "Katakanlah: Dialah Allah, Yang Maha Esa.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 2,
+      "text": "الله الصمد",
+      "text_with_harakat": "ٱللَّهُ ٱلصَّمَدُ",
+      "translation_en": "Allah, the Eternal Refuge.",
+      "translation_id": "Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 3,
+      "text": "لم يلد ولم يولد",
+      "text_with_harakat": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "translation_en": "He neither begets nor is born,",
+      "translation_id": "Dia tiada beranak dan tidak pula diperanakkan,",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    },
+    {
+      "number": 4,
+      "text": "ولم يكن له كفوا أحد",
+      "text_with_harakat": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+      "translation_en": "Nor is there to Him any equivalent.\"",
+      "translation_id": "dan tidak ada seorangpun yang setara dengan Dia.",
+      "translation_source": "Lisanul Arab (Rasm Tanpa Harakat) - Ibnu Manzhur"
+    }
+  ],
   "tafsir": {
     "id": {
       "kemenag": {

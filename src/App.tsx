@@ -150,11 +150,10 @@ export default function App() {
                     <button
                       type="button"
                       onClick={() => setLandingViewMode('catalog')}
-                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                        landingViewMode === 'catalog'
-                          ? 'bg-slate-900 text-white shadow-xs'
-                          : 'bg-slate-50 hover:bg-slate-100 text-slate-600'
-                      }`}
+                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${landingViewMode === 'catalog'
+                        ? 'bg-slate-900 text-white shadow-xs'
+                        : 'bg-slate-50 hover:bg-slate-100 text-slate-600'
+                        }`}
                     >
                       <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" />
                       <span>114 Surat</span>
@@ -163,11 +162,10 @@ export default function App() {
                     <button
                       type="button"
                       onClick={() => setLandingViewMode('sameAyah')}
-                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                        landingViewMode === 'sameAyah'
-                          ? 'bg-emerald-600 text-white shadow-xs ring-2 ring-emerald-200'
-                          : 'bg-slate-50 hover:bg-emerald-50 text-slate-600 hover:text-emerald-900'
-                      }`}
+                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${landingViewMode === 'sameAyah'
+                        ? 'bg-emerald-600 text-white shadow-xs ring-2 ring-emerald-200'
+                        : 'bg-slate-50 hover:bg-emerald-50 text-slate-600 hover:text-emerald-900'
+                        }`}
                     >
                       <Layers className="w-4 h-4 text-emerald-300 shrink-0" />
                       <span>Sama Ayat</span>
@@ -176,11 +174,10 @@ export default function App() {
                     <button
                       type="button"
                       onClick={() => setLandingViewMode('twins')}
-                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                        landingViewMode === 'twins'
-                          ? 'bg-rose-600 text-white shadow-xs ring-2 ring-rose-200'
-                          : 'bg-slate-50 hover:bg-rose-50 text-slate-600 hover:text-rose-900'
-                      }`}
+                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${landingViewMode === 'twins'
+                        ? 'bg-rose-600 text-white shadow-xs ring-2 ring-rose-200'
+                        : 'bg-slate-50 hover:bg-rose-50 text-slate-600 hover:text-rose-900'
+                        }`}
                     >
                       <Sparkles className="w-4 h-4 text-pink-300 shrink-0" />
                       <span>Ayat Kembar</span>
@@ -189,11 +186,10 @@ export default function App() {
                     <button
                       type="button"
                       onClick={() => setLandingViewMode('masani')}
-                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                        landingViewMode === 'masani'
-                          ? 'bg-indigo-600 text-white shadow-xs ring-2 ring-indigo-200'
-                          : 'bg-slate-50 hover:bg-indigo-50 text-slate-600 hover:text-indigo-900'
-                      }`}
+                      className={`px-3 sm:px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${landingViewMode === 'masani'
+                        ? 'bg-indigo-600 text-white shadow-xs ring-2 ring-indigo-200'
+                        : 'bg-slate-50 hover:bg-indigo-50 text-slate-600 hover:text-indigo-900'
+                        }`}
                     >
                       <GitFork className="w-4 h-4 text-indigo-300 shrink-0" />
                       <span>Pola Masani</span>

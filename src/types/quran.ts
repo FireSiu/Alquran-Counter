@@ -22,6 +22,7 @@ export interface VerseHighlightDetail {
 export interface Verse {
   number: number;
   text: string;
+  text_with_harakat?: string;
   translation_en: string;
   translation_id: string;
   translation_source?: string;

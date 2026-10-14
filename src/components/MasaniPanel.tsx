@@ -34,8 +34,8 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
   allSurahs,
   onOpenSurah,
 }) => {
-  // Sub-tab: Default ke 'tree' (Pohon Konsep Masani 114 Surat), dengan pilihan tab khusus Kaidah Tsunai (1+1=2)
-  const [activeTab, setActiveTab] = useState<'tree' | 'tsunai' | 'hypothesis' | 'crossMatch'>('tree');
+  // Sub-tab: Default ke 'tree' (Pohon Konsep Masani 114 Surat), dengan 3 pilihan tab
+  const [activeTab, setActiveTab] = useState<'tree' | 'hypothesis' | 'crossMatch'>('tree');
 
   // Selected Surah for Concept Tree (Default 2 = Al-Baqarah sesuai diagram user)
   const [selectedTreeSurah, setSelectedTreeSurah] = useState<number>(2);
@@ -67,11 +67,6 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
   // Top cross-surah matching values
   const topCrossMatches = useMemo(() => getTopCrossSurahMatches().slice(0, 15), []);
 
-  // Dedicated Tsunai Tab state
-  const [selectedTsunaiSurah, setSelectedTsunaiSurah] = useState<number>(2);
-  const tsunaiTree = useMemo(() => {
-    return getMasaniTreeForSurah(selectedTsunaiSurah);
-  }, [selectedTsunaiSurah]);
 
   // Hypothesis data
   const evenOddStats = useMemo(() => getWholeQuranEvenOddStats(), []);
@@ -108,8 +103,8 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
           Eksplorasi kaidah <strong className="text-indigo-900">Masani (المثاني)</strong>: penjelasan ayat berpasangan, struktur tsunai bertingkat (1+1=2, 1+2=3, 1+3=4, hingga faktorial penjelasan ayat), serta sinkronisasi numerik hisabul jumal (seperti QS. Al-Baqarah ayat 47 &amp; 122).
         </p>
 
-        {/* 4 Tombol Sub-Tab Navigasi: Mengarah ke Bawah (1 Kolom Vertikal di Mobile, Tidak Di-wrap 2x2) */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 w-full bg-slate-100 p-2 rounded-2xl pt-2">
+        {/* 3 Tombol Sub-Tab Navigasi: Mengarah ke Bawah (1 Kolom Vertikal di Mobile, Tidak Di-wrap 2x2) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full bg-slate-100 p-2 rounded-2xl pt-2">
           <button
             type="button"
             onClick={() => setActiveTab('tree')}
@@ -121,19 +116,6 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
           >
             <GitFork className="w-4 h-4 text-indigo-600 shrink-0" />
             <span className="leading-snug">Pohon Konsep Masani (114 Surat)</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('tsunai')}
-            className={`py-3 px-3.5 rounded-xl text-xs sm:text-sm font-black transition-all cursor-pointer flex items-center justify-start lg:justify-center gap-2.5 ${
-              activeTab === 'tsunai'
-                ? 'bg-white text-indigo-900 shadow-xs ring-2 ring-indigo-300'
-                : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/70'
-            }`}
-          >
-            <Layers className="w-4 h-4 text-indigo-600 shrink-0" />
-            <span className="leading-snug">Kaidah Tsunai (1+1=2 → 1+2=3 → 1+Banyak)</span>
           </button>
 
           <button
@@ -287,72 +269,6 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
                 </div>
               </div>
 
-              {/* ============================================================== */}
-              {/* BAGIAN KHUSUS: STRUKTUR KAIDAH TSUNAI BERLAPIS (1+1=2, 1+2=3, 1+3=4, 1+BANYAK) */}
-              {/* SESUAI DIAGRAM & CATATAN PENGGUNA */}
-              {/* ============================================================== */}
-              <div className="rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white p-4 sm:p-5 shadow-md space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
-                  <div>
-                    <span className="text-[11px] font-black uppercase tracking-wider text-amber-300">
-                      Kaidah Tsunai / Masani Berlapis (Sesuai Diagram)
-                    </span>
-                    <h4 className="text-base sm:text-lg font-black text-white">
-                      Mentsunaikan Ayat: 1+1=2 → 1+2=3 → 1+3=4 → 1+Banyak
-                    </h4>
-                  </div>
-                  {activeTree.evenOddFormula && (
-                    <div className="text-xs font-bold text-emerald-300 bg-white/10 px-3 py-1 rounded-lg shrink-0">
-                      {activeTree.evenOddFormula.quranVerse}
-                    </div>
-                  )}
-                </div>
-
-                {/* 4 Kotak Lapis Kaidah Tsunai */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  {(activeTree.tsunaiLayers ?? []).map((layer, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white/10 border border-white/15 rounded-xl p-3.5 flex flex-col justify-between space-y-2 hover:bg-white/15 transition-colors"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between gap-1 mb-1">
-                          <span className="text-[10px] font-black uppercase text-indigo-300 bg-white/10 px-2 py-0.5 rounded">
-                            {layer.step}
-                          </span>
-                          <span className="text-xs font-black text-amber-300 tabular-nums">
-                            {layer.formula}
-                          </span>
-                        </div>
-                        <h5 className="text-xs sm:text-sm font-black text-white">
-                          {layer.name}
-                        </h5>
-                        <p className="text-[11px] text-slate-300 font-medium leading-relaxed mt-1">
-                          {layer.description}
-                        </p>
-                      </div>
-                      <div className="pt-2 border-t border-white/10 text-[10px] font-semibold text-emerald-300">
-                        {layer.detail}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Penjelasan Formula Genap & Ganjil (Asy-Syaf'i wal Watr) */}
-                {activeTree.evenOddFormula && (
-                  <div className="bg-black/30 rounded-xl p-3 text-center space-y-1 text-xs">
-                    <div className="font-black text-sky-300">
-                      {activeTree.evenOddFormula.pairFormula}
-                    </div>
-                    <div className="font-black text-emerald-300">
-                      {activeTree.evenOddFormula.totalFormula}
-                    </div>
-                    <p className="text-[11px] text-slate-300 font-medium">
-                      {activeTree.evenOddFormula.explanation}
-                    </p>
-                  </div>
-                )}
-              </div>
 
               {/* DUA CABANG MASANI BERPASANGAN SIMETRIS (SISI A & SISI B) */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
@@ -478,254 +394,6 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ============================================================== */}
-      {/* TAB KHUSUS: KAIDAH TSUNAI (1+1=2, 1+2=3, 1+3=4, 1+BANYAK) */}
-      {/* ============================================================== */}
-      {activeTab === 'tsunai' && (
-        <div className="space-y-6 animate-fadeIn">
-          {/* 1. Header Penjelas Kaidah Tsunai (Warna Biru / Indigo Gradient) */}
-          <div className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white rounded-3xl p-5 sm:p-7 shadow-lg border border-indigo-400/20 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
-              <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-black uppercase tracking-wider mb-2">
-                  <Layers className="w-3.5 h-3.5" />
-                  Kaidah Tsunai / Masani Berlapis (Sesuai Diagram)
-                </span>
-                <h3 className="text-xl sm:text-2xl font-black text-white">
-                  Mentsunaikan Ayat: 1+1=2 → 1+2=3 → 1+3=4 → 1+Banyak
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1 leading-relaxed max-w-3xl">
-                  Prinsip <em>Tsunai</em> (الثنائي) adalah pembentukan struktur berpasangan secara bertingkat: diawali dari 1 ayat pokok yang dimatangkan oleh 1 pasangan (1+1=2), lalu melahirkan sintesis penjelas ketiga (1+2=3), hingga 4 pilar hukum (1+3=4) dan cabang faktorial luas ke seluruh Al-Qur'an (1+Banyak).
-                </p>
-              </div>
-
-              {tsunaiTree.evenOddFormula && (
-                <div className="text-xs font-bold text-emerald-300 bg-white/10 px-3.5 py-2 rounded-xl shrink-0 border border-white/15 self-start sm:self-auto">
-                  {tsunaiTree.evenOddFormula.quranVerse}
-                </div>
-              )}
-            </div>
-
-            {/* Korelasi Formula Genap & Ganjil (Asy-Syaf'i wal Watr - QS Al-Fajr: 3) */}
-            {tsunaiTree.evenOddFormula && (
-              <div className="bg-black/40 rounded-2xl p-4 border border-white/10 space-y-2 text-xs">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="font-black text-sky-300 text-sm">
-                    {tsunaiTree.evenOddFormula.pairFormula}
-                  </div>
-                  <div className="font-black text-emerald-300 text-sm">
-                    {tsunaiTree.evenOddFormula.totalFormula}
-                  </div>
-                </div>
-                <p className="text-xs text-slate-300 font-medium leading-relaxed">
-                  {tsunaiTree.evenOddFormula.explanation}
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* 2. KOTAK WARNA PUTIH TERPISAH: PEMILIH SURAT & 4 LAPIS TSUNAI (TIDAK MENYATU DENGAN BIRU) */}
-          <div className="bg-white border-2 border-indigo-200 rounded-3xl p-4 sm:p-6 shadow-sm space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
-              <div>
-                <label className="text-xs font-black uppercase tracking-wider text-indigo-900 block">
-                  Pilih Surat untuk Melihat Struktur Tsunai Berlapis (114 Surat):
-                </label>
-                <div className="text-sm sm:text-base font-black text-slate-900 mt-0.5">
-                  Sedang Menampilkan: <span className="text-indigo-700">Surat {tsunaiTree.surahNumber}. {tsunaiTree.surahName}</span> <span className="text-slate-500 font-semibold text-xs sm:text-sm">({tsunaiTree.theme})</span>
-                </div>
-                <p className="text-xs text-slate-500 font-medium mt-0.5">
-                  Tersedia untuk seluruh 114 surat. Silakan pilih surat untuk memeriksa 4 lapis pembagiannya.
-                </p>
-              </div>
-
-              {/* Dropdown Pemilih 114 Surat Warna Putih Bersih */}
-              <select
-                value={selectedTsunaiSurah}
-                onChange={(e) => setSelectedTsunaiSurah(Number(e.target.value))}
-                aria-label="Pilih surat untuk kaidah tsunai"
-                className="w-full sm:w-72 bg-white border-2 border-indigo-400 rounded-xl px-3 py-2.5 text-sm font-black text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-300 cursor-pointer shadow-2xs truncate"
-              >
-                {allSurahs.map((s) => (
-                  <option key={s.number_of_surah} value={s.number_of_surah}>
-                    {s.number_of_surah}. {s.name} ({s.number_of_ayah} ayat) {CURATED_MASANI_TREES[s.number_of_surah] ? '★' : ''}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Pilihan Cepat Surat Populer */}
-            <div className="flex flex-wrap items-center gap-1.5 text-xs font-bold text-slate-500">
-              <span className="text-slate-400 shrink-0">Pilihan Cepat:</span>
-              {[
-                { n: 2, label: 'Al-Baqarah (Zakat, Infaq & Sedekah)' },
-                { n: 89, label: 'Al-Fajr (Genap & Ganjil)' },
-                { n: 1, label: 'Al-Fatihah (7 Ayat Masani)' },
-                { n: 28, label: 'Al-Qashash (Malam ↔ Siang)' },
-                { n: 56, label: 'Al-Waqi\'ah (Kanan ↔ Kiri)' },
-                { n: 92, label: 'Al-Lail (Memberi ↔ Kikir)' },
-                { n: 55, label: 'Ar-Rahman (Dua Lautan)' },
-                { n: 67, label: 'Al-Mulk (Mati ↔ Hidup)' },
-              ].map((p) => (
-                <button
-                  key={p.n}
-                  type="button"
-                  onClick={() => setSelectedTsunaiSurah(p.n)}
-                  className={`px-2.5 py-1 rounded-lg border text-xs font-bold transition-colors cursor-pointer ${
-                    selectedTsunaiSurah === p.n
-                      ? 'bg-indigo-600 text-white border-indigo-600 shadow-2xs'
-                      : 'bg-slate-50 text-slate-700 hover:text-indigo-900 hover:border-indigo-300 border-slate-200'
-                  }`}
-                >
-                  {p.label}
-                </button>
-              ))}
-            </div>
-
-            {/* 4 Kotak Lapis Kaidah Tsunai dalam Kotak Putih / Bersih */}
-            <div className="pt-2">
-              <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 mb-3 flex items-center gap-1.5">
-                <Layers className="w-4 h-4 text-indigo-600" />
-                <span>4 Lapis Pembagian Kaidah Tsunai QS {tsunaiTree.surahName}:</span>
-              </h4>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-                {(tsunaiTree.tsunaiLayers ?? []).map((layer, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-indigo-300 hover:bg-indigo-50/30 transition-all shadow-2xs"
-                  >
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between gap-1">
-                        <span className="text-[11px] font-black uppercase text-indigo-700 bg-indigo-100 px-2.5 py-1 rounded-lg">
-                          {layer.step}
-                        </span>
-                        <span className="text-sm font-black text-indigo-950 tabular-nums bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-2xs">
-                          {layer.formula}
-                        </span>
-                      </div>
-                      <h5 className="text-sm sm:text-base font-black text-slate-900 leading-snug">
-                        {layer.name}
-                      </h5>
-                      <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                        {layer.description}
-                      </p>
-                    </div>
-                    <div className="pt-2.5 border-t border-slate-200 text-xs font-semibold text-emerald-700">
-                      {layer.detail}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Rincian Ayat Jangkar & Cabang Pasangan Surat Terpilih */}
-          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-4 sm:p-6 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
-                <h4 className="text-base font-black text-slate-900">
-                  Ayat Jangkar &amp; Pilar Berpasangan QS {tsunaiTree.surahName}:
-                </h4>
-                <p className="text-xs text-slate-500 font-semibold">
-                  {tsunaiTree.verseAnchor}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => onOpenSurah(tsunaiTree.anchorSurah, tsunaiTree.anchorAyah)}
-                className="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black transition-colors flex items-center gap-1.5 self-start sm:self-auto cursor-pointer shadow-xs"
-              >
-                <span>Buka QS {tsunaiTree.surahName}:{tsunaiTree.anchorAyah}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-
-            {/* Kutipan Ayat Jangkar */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-2xs space-y-3">
-              <p className="font-arabic text-xl sm:text-2xl text-right text-slate-900 leading-loose" dir="rtl">
-                {tsunaiTree.anchorArabic}
-              </p>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                {renderHighlightedTranslation(tsunaiTree.anchorTranslation)}
-              </p>
-            </div>
-
-            {/* 2 Cabang Simetris (Sisi A & Sisi B) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white border-2 border-sky-200 rounded-2xl p-4 space-y-3 shadow-2xs">
-                <div className="flex items-center justify-between border-b border-sky-100 pb-2">
-                  <span className="text-xs font-black uppercase text-sky-800">
-                    Cabang Sisi A: {tsunaiTree.branches.sideA.name}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => onOpenSurah(tsunaiTree.branches.sideA.surahRef, tsunaiTree.branches.sideA.ayahRef)}
-                    className="text-xs font-bold text-sky-700 hover:underline cursor-pointer"
-                  >
-                    QS {tsunaiTree.branches.sideA.surahName}:{tsunaiTree.branches.sideA.ayahRef} ↗
-                  </button>
-                </div>
-                <p className="font-arabic text-lg text-right text-slate-900 leading-relaxed" dir="rtl">
-                  {tsunaiTree.branches.sideA.arabic}
-                </p>
-                <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                  {renderHighlightedTranslation(tsunaiTree.branches.sideA.quote)}
-                </p>
-              </div>
-
-              <div className="bg-white border-2 border-emerald-200 rounded-2xl p-4 space-y-3 shadow-2xs">
-                <div className="flex items-center justify-between border-b border-emerald-100 pb-2">
-                  <span className="text-xs font-black uppercase text-emerald-800">
-                    Cabang Sisi B: {tsunaiTree.branches.sideB.name}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => onOpenSurah(tsunaiTree.branches.sideB.surahRef, tsunaiTree.branches.sideB.ayahRef)}
-                    className="text-xs font-bold text-emerald-700 hover:underline cursor-pointer"
-                  >
-                    QS {tsunaiTree.branches.sideB.surahName}:{tsunaiTree.branches.sideB.ayahRef} ↗
-                  </button>
-                </div>
-                <p className="font-arabic text-lg text-right text-slate-900 leading-relaxed" dir="rtl">
-                  {tsunaiTree.branches.sideB.arabic}
-                </p>
-                <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                  {renderHighlightedTranslation(tsunaiTree.branches.sideB.quote)}
-                </p>
-              </div>
-            </div>
-
-            {/* Tombol Lintas Tab */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedTreeSurah(selectedTsunaiSurah);
-                  setActiveTab('tree');
-                }}
-                className="px-4 py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 text-xs font-black transition-colors flex items-center gap-2 cursor-pointer shadow-2xs"
-              >
-                <GitFork className="w-4 h-4 text-indigo-600" />
-                <span>Lihat Pohon Faktorial Lengkap (Tab Pohon Konsep) ↗</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setHypothesisSurahFilter(selectedTsunaiSurah);
-                  setActiveTab('hypothesis');
-                }}
-                className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 text-xs font-black transition-colors flex items-center gap-2 cursor-pointer shadow-2xs"
-              >
-                <Scale className="w-4 h-4 text-slate-600" />
-                <span>Uji Pasangan Kelipatan 2 Surat Ini (Tab Hipotesa) ↗</span>
-              </button>
             </div>
           </div>
         </div>
@@ -1246,12 +914,12 @@ export const MasaniPanel: React.FC<MasaniPanelProps> = ({
               <button
                 type="button"
                 onClick={() => {
-                  setSelectedTsunaiSurah(hypothesisSurahFilter);
-                  setActiveTab('tsunai');
+                  setSelectedTreeSurah(hypothesisSurahFilter);
+                  setActiveTab('tree');
                 }}
                 className="px-4 py-2.5 bg-indigo-500 hover:bg-indigo-400 text-white rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-2 shrink-0 self-start sm:self-auto cursor-pointer shadow-xs hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>Buka Tab Khusus Tsunai</span>
+                <span>Buka Pohon Konsep Masani</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
